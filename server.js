@@ -23,6 +23,21 @@ app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
+app.get("/api/tableData", function(req, res) {  
+    console.log(tableData);
+  
+    return res.json(false);
+  });
+
+app.get("/api/waitList", function(req, res) {  
+    console.log(waitList);
+  
+    return res.json(false);
+  });
+
+var tableData = [];
+var waitList = [];
+
 // Create New Characters - takes in JSON input
 app.post("/tables", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
